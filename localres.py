@@ -30,23 +30,28 @@ def build_histogram(values, title, nbins):
     ax.set_title(title)
     ax.grid(True)
     fig.tight_layout()
-    fig.figsize = (11.80, 8.85)
-    fig.dpi = 300
     return fig
 
 # Command-line tool made from the buidling blocks
 
-CONTEXT_SETTINGS = dict(help_option_names = ['-h', '--help'])
-
-@click.command(context_settings = CONTEXT_SETTINGS)
+@click.command(context_settings = dict(help_option_names = ['-h', '--help']))
 @click.argument('relion_locres', metavar = '<relion_locres.mrc>')
 @click.argument('mask', metavar = '<mask.mrc>')
-def cli(relion_locres, mask):
-    """Plots a histogram of local resolution values from RELION files.
+@click.option('-t', '--title', 'title', default = '', help = 'Title of the histogram (default: no title).')
+@click.option('-b', '--bins', 'nbins', default = 100, type = int, help = 'Number of bins in the histogram (default: 100).')
+@click.option('-o', '--output', 'output_file', default = '', help = 'File name to save the histogram (optional: with no file name, simply display the histogram on screen without saving it; recommended file formats: .png, .pdf, .svg or any format supported by matplotlib).')
+def cli(relion_locres, mask, title, nbins, output_file):
+    """Plots a histogram of local resolution values from a local resolution map and a mask both produced by RELION.
 
     For meaningful results, the mask.mrc file must be the one used for the 3D refinement and post-processing jobs that produced the relion_locres.mrc file."""
     values = compute_values(relion_locres, mask)
-    plot_histogram(values)
+    histogram = build_histogram(values, title, nbins)
+    if output_file:
+        histogram.figsize = (11.80, 8.85)
+        histogram.dpi = 300
+        plt.savefig(output_file)
+    else:
+        plt.show()
 
 if __name__ == '__main__':
     cli()

@@ -21,14 +21,17 @@ def compute_values(relion_locres_mrc, mask_mrc):
     values = np.reshape(locres[mask > 0.5], -1)
     return values
 
-def plot_histogram(values, title = 'Dataset 1'):
+def build_histogram(values, title, nbins):
+    """Builds a histogram of local resolution values."""
     fig, ax = plt.subplots()
-    ax.hist(values, bins = 100)
+    ax.hist(values, bins = nbins)
     ax.set_xlabel('Local resolution (Å)')
     ax.set_ylabel('Number of map voxels')
     ax.set_title(title)
     ax.grid(True)
-    plt.show()
+    fig.tight_layout()
+    fig.figsize = (11.80, 8.85)
+    fig.dpi = 300
     return fig
 
 # Command-line tool made from the buidling blocks

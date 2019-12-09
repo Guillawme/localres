@@ -9,11 +9,13 @@ import click
 # Building blocks
 
 def load_data(mrc_file):
+    """Takes an MRC file and returns its data array."""
     with mrc.open(mrc_file) as my_file:
         my_data = my_file.data
     return my_data
 
 def compute_values(relion_locres_mrc, mask_mrc):
+    """Takes the MRC data arrays of a local resolution map and a mask, returns local resolution values of all map voxels within the mask."""
     locres = load_data(relion_locres_mrc)
     mask = load_data(mask_mrc)
     values = np.reshape(locres[mask > 0.5], -1)

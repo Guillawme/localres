@@ -1,5 +1,7 @@
 # localres
 
+[![DOI](https://zenodo.org/badge/225436030.svg)](https://zenodo.org/badge/latestdoi/225436030)
+
 Plot a local resolution histogram from a local resolution map and a mask.
 
 From a cryo-EM reconstruction, one can calculate local resolution and generate a

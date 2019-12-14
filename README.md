@@ -31,13 +31,13 @@ and easy to install.
 
 ## Installation
 
-``` sh
+```
 $ pip install localres
 ```
 
 ## Usage
 
-``` sh
+```
 $ localres --help
 Usage: localres [OPTIONS] <relion_locres.mrc> <mask.mrc>
 

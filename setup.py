@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding = 'utf-8') as f:
 
 setup(
     name = 'localres',
-    version = '1.0',
+    version = '1.1',
 
     description = 'Plot a histogram of local resolution values from a local resolution map of a cryo-EM reconstruction from RELION.',
     long_description = readme,

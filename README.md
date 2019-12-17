@@ -22,6 +22,11 @@ from a different computer. This tool also lets you adjust the number of bins in
 the histogram, and save the histogram as an SVG file (which is useful for
 adjusting styling to make a pretty figure).
 
+**Q:** Will it work with MRC files produced by my favorite software (not RELION)?
+
+**A:** If these MRC files have the same structure, then yes. But I don't know
+for sure, because this tool has only been tested with files produced by RELION.
+
 ## Acknowledgments
 
 I reused code suggested by

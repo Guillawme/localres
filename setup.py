@@ -47,7 +47,7 @@ setup(
 
     entry_points = {
         'console_scripts': [
-            'localres=localres:cli',
+            'localres=localres:cli'
         ]
     },
 

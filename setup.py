@@ -39,10 +39,10 @@ setup(
 
     python_requires = '>=3.7',
     install_requires = [
+        'click>=7.0',
+        'matplotlib>=3.1.1',
         'mrcfile>=1.1.2',
-        'numpy>=1.17.4',
-        'matplotlib>=3.1.2',
-        'click>=7.0'
+        'numpy>=1.17.3'
     ],
 
     entry_points = {

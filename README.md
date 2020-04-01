@@ -10,7 +10,8 @@ within slices of it). This command-line tool complements this by allowing one to
 quantitatively answer the question "how many map voxels inside the mask have a
 given local resolution?". This tool generates a histogram of local resolution
 values from a local resolution map and a mask (`relion_locres.mrc` and
-`mask.mrc` files from RELION, respectively).
+`mask.mrc` files from RELION, respectively; `cryosparc_*_map_locres.mrc` and
+`cryosparc_*_volume_mask_refine.mrc` from cryoSPARC, respectively).
 
 ## FAQ
 
@@ -22,10 +23,20 @@ from a different computer. This tool also lets you adjust the number of bins in
 the histogram, and save the histogram as an SVG file (which is useful for
 adjusting styling to make a pretty figure).
 
-**Q:** Will it work with MRC files produced by my favorite software (not RELION)?
+**Q:** Doesn't cryoSPARC already do this?
+
+**A:** Yes, cryoSPARC already prints out this histogram. This tool, however,
+doesn't require an installation of cryoSPARC, allowing one to inspect files
+quickly from a different computer. This tool also lets you adjust the number of
+bins in the histogram, and save the histogram as an SVG file (which is useful
+for adjusting styling to make a pretty figure).
+
+**Q:** Will it work with MRC files produced by my favorite software (not RELION
+or cryoSPARC)?
 
 **A:** If these MRC files have the same structure, then yes. But I don't know
-for sure, because this tool has only been tested with files produced by RELION.
+for sure, because this tool has only been tested with files produced by RELION
+and cryoSPARC.
 
 ## Acknowledgments
 

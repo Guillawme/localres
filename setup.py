@@ -11,9 +11,9 @@ with open(path.join(here, 'README.md'), encoding = 'utf-8') as f:
 
 setup(
     name = 'localres',
-    version = '1.1',
+    version = '1.2',
 
-    description = 'Plot a histogram of local resolution values from a local resolution map of a cryo-EM reconstruction from RELION.',
+    description = 'Plot the histogram of local resolution values of a cryo-EM reconstruction.',
     long_description = readme,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/Guillawme/localres',

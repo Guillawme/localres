@@ -1,12 +1,14 @@
+PROJECT = localres
+
 FILES = \
 	LICENSE \
 	README.md \
 	environment.yml \
 	makefile \
 	setup.py \
-	localres.py
+	$(PROJECT).py
 
-.PHONY: all clean check upload
+.PHONY: all check upload clean create-env update-env
 
 all: build check upload
 
@@ -20,4 +22,10 @@ upload: check
 	twine upload dist/*
 
 clean:
-	rm -rf localres.egg-info build dist __pycache__
+	rm -rf $(PROJECT).egg-info build dist __pycache__
+
+create-env:
+	conda env create -f environment.yml
+
+update-env:
+	conda env export --name dev-$(PROJECT) > environment.yml

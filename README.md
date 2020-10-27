@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3575229.svg)](https://doi.org/10.5281/zenodo.3575229)
 
-Plot a local resolution histogram from a local resolution map and a mask.
+Plot the histogram of local resolution values of a cryo-EM reconstruction.
 
 From a cryo-EM reconstruction, one can calculate local resolution and generate a
 color-coded 3D map showing local resolution across the 3D reconstruction (or
@@ -39,6 +39,9 @@ for sure, because this tool has only been tested with files produced by RELION
 and cryoSPARC.
 
 ## Acknowledgments
+
+I would not have been able to put this tool together without the
+[`mrcfile`](https://github.com/ccpem/mrcfile) library.
 
 I reused code suggested by
 [@biochem_fan](https://twitter.com/biochem_fan/status/1161347681110962177). My

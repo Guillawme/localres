@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import mrcfile as mrc
 import numpy as np
 import matplotlib.pyplot as plt
@@ -29,14 +26,14 @@ def build_histogram(values, title, nbins):
 
 # Command-line tool made from the buidling blocks
 
-@click.command(context_settings = dict(help_option_names = ['-h', '--help']))
-@click.argument('file1', metavar = '<relion_locres.mrc>')
-@click.argument('file2', metavar = '<mask.mrc>')
-@click.option('-t', '--title', 'title', default = '', help = 'Title of the histogram (default: no title).')
-@click.option('-b', '--bins', 'nbins', default = 100, type = int, help = 'Number of bins in the histogram (default: 100).')
-@click.option('-o', '--output', 'output_file', default = '', help = 'File name to save the histogram (optional: with no file name, simply display the histogram on screen without saving it; recommended file formats: .png, .pdf, .svg or any format supported by matplotlib).')
+@click.command(context_settings = dict(help_option_names=['-h', '--help']))
+@click.argument('file1', metavar='<relion_locres.mrc>')
+@click.argument('file2', metavar='<mask.mrc>')
+@click.option('-t', '--title', 'title', default='', help='Title of the histogram (default: no title).')
+@click.option('-b', '--bins', 'nbins', default=100, type=int, help='Number of bins in the histogram (default: 100).')
+@click.option('-o', '--output', 'output_file', default='', help='File name to save the histogram (optional: with no file name, simply display the histogram on screen without saving it; recommended file formats: .png, .pdf, .svg or any format supported by matplotlib).')
 def cli(file1, file2, title, nbins, output_file):
-    """Plots a histogram of local resolution values from a local resolution map and a mask both produced by RELION.
+    """Plot a histogram of local resolution values from a local resolution map and a mask both produced by RELION.
 
     For meaningful results, the mask.mrc file must be the one used for the 3D refinement and post-processing jobs that produced the relion_locres.mrc file."""
     A = mrc.open(file1)
@@ -59,6 +56,3 @@ def cli(file1, file2, title, nbins, output_file):
     mask.close()
     A.close()
     B.close()
-
-if __name__ == '__main__':
-    cli()

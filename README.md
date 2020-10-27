@@ -60,7 +60,7 @@ $ pip install localres
 $ localres --help
 Usage: localres [OPTIONS] <relion_locres.mrc> <mask.mrc>
 
-  Plots a histogram of local resolution values from a local resolution map
+  Plot a histogram of local resolution values from a local resolution map
   and a mask both produced by RELION.
 
   For meaningful results, the mask.mrc file must be the one used for the 3D
@@ -74,6 +74,6 @@ Options:
                       name, simply display the histogram on screen without
                       saving it; recommended file formats: .png, .pdf, .svg or
                       any format supported by matplotlib).
+
   -h, --help          Show this message and exit.
 ```
-

@@ -26,7 +26,7 @@ def build_histogram(values, title, nbins):
 
 # Command-line tool made from the buidling blocks
 
-@click.command(context_settings = dict(help_option_names=['-h', '--help']))
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
 @click.argument('file1', metavar='<relion_locres.mrc>')
 @click.argument('file2', metavar='<mask.mrc>')
 @click.option('-t', '--title', 'title', default='', help='Title of the histogram (default: no title).')

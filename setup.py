@@ -8,9 +8,9 @@ with open(path.join(here, 'README.md'), encoding = 'utf-8') as f:
 
 setup(
     name = 'localres',
-    version = '1.5',
+    version = '1.6',
 
-    description = 'Plot the histogram of local resolution values of a cryo-EM reconstruction.',
+    description = 'Plot the histogram of local resolution values of a cryo-EM reconstruction',
     long_description = readme,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/Guillawme/localres',
@@ -34,12 +34,12 @@ setup(
 
     py_modules = ["localres"],
 
-    python_requires = '>=3.8.5',
+    python_requires = '>=3.9.1',
     install_requires = [
         'click>=7.1.2',
-        'matplotlib>=3.3.1',
-        'mrcfile>=1.1.2',
-        'numpy>=1.19.1'
+        'matplotlib>=3.3.2',
+        'mrcfile>=1.2.0',
+        'numpy>=1.19.4'
     ],
 
     entry_points = {

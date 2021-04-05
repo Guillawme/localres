@@ -6,15 +6,15 @@ import click
 # Building blocks
 
 def is_mask(mrc):
-    """Checks whether a given MRC file is a mask."""
+    """Check whether a given MRC file is a mask."""
     return mrc.header['dmax'] == 1.0
 
 def compute_values(locres, mask):
-    """Takes MRC files of a local resolution map and a mask, then from their data arrays returns local resolution values of all map voxels within the mask."""
+    """Take MRC files of a local resolution map and a mask, then from their data arrays return local resolution values of all map voxels within the mask."""
     return np.reshape(locres.data[mask.data > 0.5], -1)
 
 def build_histogram(values, title, nbins):
-    """Builds a histogram of local resolution values."""
+    """Build a histogram of local resolution values."""
     fig, ax = plt.subplots()
     ax.hist(values, bins = nbins)
     ax.set_xlabel('Local resolution (Å)')

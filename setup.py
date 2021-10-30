@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding = 'utf-8') as f:
 
 setup(
     name = 'localres',
-    version = '1.6',
+    version = '1.7',
 
     description = 'Plot the histogram of local resolution values of a cryo-EM reconstruction',
     long_description = readme,
@@ -34,12 +34,12 @@ setup(
 
     py_modules = ["localres"],
 
-    python_requires = '>=3.9.1',
+    python_requires = '>=3.9.7',
     install_requires = [
-        'click>=7.1.2',
-        'matplotlib>=3.3.2',
-        'mrcfile>=1.2.0',
-        'numpy>=1.19.4'
+        'click>=8.0.3',
+        'matplotlib>=3.4.3',
+        'mrcfile>=1.3.0',
+        'numpy>=1.21.2'
     ],
 
     entry_points = {

@@ -29,13 +29,14 @@ def build_histogram(values, title, nbins):
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
 @click.argument('file1', metavar='<relion_locres.mrc>')
 @click.argument('file2', metavar='<mask.mrc>')
-@click.option('-t', '--title', 'title', default='', help='Title of the histogram (default: no title).')
-@click.option('-b', '--bins', 'nbins', default=100, type=int, help='Number of bins in the histogram (default: 100).')
+@click.option('-t', '--title', 'title', default='', help='Title of the histogram.')
+@click.option('-b', '--bins', 'nbins', default=100, show_default=True, type=int, help='Number of bins in the histogram.')
 @click.option('-o', '--output', 'output_file', default='', help='File name to save the histogram (optional: with no file name, simply display the histogram on screen without saving it; recommended file formats: .png, .pdf, .svg or any format supported by matplotlib).')
 def cli(file1, file2, title, nbins, output_file):
     """Plot a histogram of local resolution values from a local resolution map and a mask both produced by RELION.
 
-    For meaningful results, the mask.mrc file must be the one used for the 3D refinement and post-processing jobs that produced the relion_locres.mrc file."""
+    For meaningful results, the mask.mrc file must be the one used for the 3D refinement and post-processing jobs that produced the relion_locres.mrc file.
+    Files can be passed in any order and will be correctly recognized as the mask and local resolution values."""
     A = mrc.open(file1)
     B = mrc.open(file2)
     if is_mask(A):
